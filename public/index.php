@@ -7,6 +7,7 @@
  * @author   Taylor Otwell <taylor@laravel.com>
  */
 
+// オートローダの読み込み
 define('LARAVEL_START', microtime(true));
 
 /*
@@ -35,6 +36,7 @@ require __DIR__.'/../vendor/autoload.php';
 |
 */
 
+// フレームワークの起動
 $app = require_once __DIR__.'/../bootstrap/app.php';
 
 /*
@@ -49,12 +51,15 @@ $app = require_once __DIR__.'/../bootstrap/app.php';
 |
 */
 
+// アプリケーションの実行
 $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
 
 $response = $kernel->handle(
     $request = Illuminate\Http\Request::capture()
 );
 
+// HTTPレスポンスの送信
 $response->send();
 
+// 終了処理
 $kernel->terminate($request, $response);
