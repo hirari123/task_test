@@ -117,7 +117,13 @@ return [
     */
 
     'attributes' => [
-        'password' => 'パスワード'
+        'password' => 'パスワード',
+        'your_name' => '氏名',
+        'title' => '件名',
+        'email' => 'メールアドレス',
+        'gender' => '性別',
+        'contact' => 'お問い合わせ内容',
+        'caution' => '注意事項'
     ],
 
 ];
