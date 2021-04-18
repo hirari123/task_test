@@ -15,6 +15,17 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                    
+                    <!-- １つでもエラーが出ていたら -->
+                    @if ($errors->any()) 
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    @endif
 
                     createです
                     <form action="{{ route('contact.store') }}" method="POST">
